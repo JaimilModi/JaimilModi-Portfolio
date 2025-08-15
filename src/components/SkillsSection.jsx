@@ -29,7 +29,10 @@ const skills = [
 
   { name: "Unity", level: 69, category: "game-dev" },
 
-  { name: "Git/GitHub", level: 75, category: "tools" },
+  { name: "POSTMAN", level: 80, category: "tools" },
+  { name: "Thunder Client", level: 70, category: "tools" },
+  { name: "Git", level: 70, category: "tools" },
+  { name: "GitHub", level: 75, category: "tools" },
   { name: "VS Code", level: 85, category: "tools" },
 ];
 const categories = [
