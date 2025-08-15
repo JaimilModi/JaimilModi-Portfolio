@@ -9,25 +9,95 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    success: false,
+    error: false,
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsSubmitting(true);
+    setFormStatus({
+      submitting: true,
+      success: false,
+      error: false,
+      message: "",
+    });
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your Message. I'll get back to you soon.",
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }
+      );
+      setFormStatus({
+        submitting: false,
+        success: true,
+        error: false,
+        message: "Thank you for your Message. I'll get back to you soon.",
       });
-      setIsSubmitting(false);
-    }, 1500);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setFormStatus({
+        submitting: false,
+        success: false,
+        error: true,
+        message: "Failed to send message. Plese try again.",
+      });
+    }
   };
+  
+// Below is Old Submiting message without implementing emailjs
+// the component ui folder and toaast & toaster files are just for test purpose
+//these comments are for i did not forget this in future
+
+  // const { toast } = useToast();
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   setIsSubmitting(true);
+
+  //   setTimeout(() => {
+  //     toast({
+  //       title: "Message sent!",
+  //       description: "Thank you for your Message. I'll get back to you soon.",
+  //     });
+  //     setIsSubmitting(false);
+  //   }, 1500);
+  // };
+
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -138,6 +208,7 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="Jaimil Modi..."
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -155,6 +226,7 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="your_name@gmail.com"
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -171,19 +243,25 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                   placeholder="hello, I&#39;d like to talk about..."
+                  onChange={handleInputChange}
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={formStatus.submitting}
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {formStatus.submitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
               </button>
+              {formStatus.message && (
+                <div className="mt-1 p-1 text-center font-bold">
+                  {formStatus.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
