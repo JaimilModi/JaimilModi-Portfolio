@@ -5,8 +5,8 @@ const projects = [
     id: 1,
     title: "Food Delivery Webpage",
     description:
-      "Tomato is your go-to online food ordering platform, offering a wide variety of freshly prepared dishes to satisfy every craving, delivered right to your door.",
-    image: "/projects/tomato.png",
+      "CraveCart is your go-to online food ordering platform, offering a wide variety of freshly prepared dishes to satisfy every craving, delivered right to your door.",
+    image: "/projects/CraveCart.png",
     tags: [
       "React",
       "MongoDb",
