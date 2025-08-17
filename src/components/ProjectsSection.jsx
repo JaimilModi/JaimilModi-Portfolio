@@ -2,40 +2,49 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    id: 1,
-    title: "Food Delivery Webpage",
-    description:
-      "CraveCart is your go-to online food ordering platform, offering a wide variety of freshly prepared dishes to satisfy every craving, delivered right to your door.",
-    image: "/projects/CraveCart.png",
-    tags: [
-      "React",
-      "MongoDb",
-      "Express",
-      "Axios",
-      "Stripe",
-      "Bcrypt",
-      "Nodemon",
-    ],
-    Url: "https://food-del-frontend-uva2.onrender.com",
-  },
-  {
-    id: 2,
-    title: "SnappyTalk",
-    description:
-      "SnappyTalk is a sleek and real-time chat app that lets you connect instantly with friends, see who's online, and keep conversations flowing effortlessly.",
-    image: "/projects/snappy-talk.png",
-    tags: ["React", "MongoDb", "cloudinary", "Axios", "Socket.io", "Daisy UI"],
-    Url: "https://snappytalk.onrender.com/",
-  },
-  {
-    id: 3,
-    title: "Assistant-AI",
-    description:
-      "Assistant-AI is an interactive AI chat interface that helps you ask questions, get instant answers, and explore information in a clean, user-friendly design.",
-    image: "/projects/assistant-ui.png",
-    tags: ["React", "TypeScript", "TailwindCSS", "Lucide React", "Gemini API"],
-    Url: "https://ai-nu-taupe-29.vercel.app/",
-  },
+  id: 1,
+  title: "Food Delivery Webpage",
+  description:
+    "CraveCart is a full-stack food ordering platform that lets users browse menus, place orders, and make secure payments. It features real-time order tracking, user authentication, and an admin panel for restaurant and menu management.",
+  image: "/projects/CraveCart.png",
+  tags: [
+    "React",
+    "MongoDb",
+    "Express",
+    "Axios",
+    "Stripe",
+    "Bcrypt",
+    "Nodemon",
+  ],
+  Url: "https://food-del-frontend-uva2.onrender.com",
+},
+{
+  id: 2,
+  title: "SnappyTalk",
+  description:
+    "SnappyTalk is a real-time chat application designed for seamless communication. It supports private messaging, online status indicators, and a responsive UI to ensure smooth conversations across all devices.",
+  image: "/projects/snappy-talk.png",
+  tags: ["React", "MongoDb", "Cloudinary", "Axios", "Socket.io", "Daisy UI"],
+  Url: "https://snappytalk.onrender.com/",
+},
+{
+  id: 3,
+  title: "TaskoraAI",
+  description:
+    "TaskoraAI is a SaaS AI platform offering tools for article and blog title generation, AI image creation, object/background removal, and resume reviews. It includes Clerk authentication, a personalized dashboard, and a community hub for collaboration.",
+  image: "/projects/Taskora-ai.png",
+  tags: [
+    "React",
+    "Axios",
+    "Clerk",
+    "Express",
+    "Cloudinary",
+    "Gemini API",
+    "CORS",
+  ],
+  Url: "https://taskora-ai.vercel.app/",
+}
+
 ];
 
 export const ProjectsSection = () => {

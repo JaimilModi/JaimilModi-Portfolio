@@ -11,14 +11,30 @@ const skills = [
   { name: "CSS", level: 90, category: "frontend" },
   { name: "React", level: 90, category: "frontend" },
   { name: "Next.js", level: 60, category: "frontend" },
-  { name: "Tailwind CSS", level: 60, category: "frontend" },
+  { name: "Tailwind CSS", level: 75, category: "frontend" },
   { name: "Bootstrap", level: 70, category: "frontend" },
+  { name: "Daisy UI", level: 65, category: "frontend" },
+  { name: "React Router", level: 70, category: "frontend" },
+  { name: "React Markdown", level: 65, category: "frontend" },
+  { name: "React Hot Toast", level: 70, category: "frontend" },
+  { name: "Lucide React", level: 65, category: "frontend" },
 
   { name: "Node.js", level: 50, category: "backend" },
-  { name: "Express", level: 50, category: "backend" },
+  { name: "Express", level: 70, category: "backend" },
+  { name: "Socket.io", level: 70, category: "backend" },
+  { name: "Clerk (Auth)", level: 65, category: "backend" },
+  { name: "CORS", level: 65, category: "backend" },
+  { name: "Dotenv", level: 70, category: "backend" },
 
   { name: "MongoDB", level: 70, category: "database" },
   { name: "SQL", level: 85, category: "database" },
+  { name: "Neon (Serverless Postgres)", level: 65, category: "database" },
+
+  { name: "Gemini API", level: 65, category: "api" },
+  { name: "Cloudinary", level: 70, category: "api" },
+
+  { name: "Bcrypt", level: 70, category: "security" },
+  { name: "Stripe", level: 65, category: "payments" },
 
   { name: "DSA (C Implementation)", level: 65, category: "dsa" },
 
@@ -32,8 +48,12 @@ const skills = [
 
   { name: "POSTMAN", level: 80, category: "tools" },
   { name: "Thunder Client", level: 70, category: "tools" },
+  { name: "Multer", level: 65, category: "tools" },
+  { name: "PDF-Parse", level: 60, category: "tools" },
   { name: "Git/GitHub", level: 75, category: "tools" },
   { name: "VS Code", level: 85, category: "tools" },
+  { name: "Nodemon", level: 70, category: "tools" },
+  { name: "Axios", level: 75, category: "tools" },
 ];
 const categories = [
   "all",
