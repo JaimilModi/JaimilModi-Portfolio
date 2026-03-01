@@ -1,5 +1,14 @@
 # 🌐 Jaimil Modi — Developer Portfolio
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JaimilModi/github-profile-assets/main/portfolio-dark.png" alt="Portfolio Dark Mode" width="48%" />
+  <img src="https://raw.githubusercontent.com/JaimilModi/github-profile-assets/main/portfolio-light.png" alt="Portfolio Light Mode" width="48%" />
+</p>
+
+<p align="center">
+  <b>🌙 Dark Mode</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>☀️ Light Mode</b>
+</p>
 
 ---
 
@@ -46,7 +55,6 @@ JaimilModi-Portfolio/
 │
 ├── public/
 ├── src/
-│
 ├── .env
 ├── index.html
 ├── package.json
