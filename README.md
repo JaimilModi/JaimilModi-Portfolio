@@ -1,12 +1,111 @@
-# React + Vite
+# 🌐 Jaimil Modi — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Overview
 
-## Expanding the ESLint configuration
+This is my personal **developer portfolio website**, designed and built to showcase my skills, projects, and growth as a developer.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+It features a modern UI, smooth animations, theme switching (light/dark mode), and a fully functional contact system powered by EmailJS.
+
+The goal of this portfolio is to present my work in a clean, professional, and interactive way.
+
+---
+
+## 🚀 Live Website
+
+<a href="https://jaimil-modi-portfolio.vercel.app/">
+  <img src="https://img.shields.io/badge/Live-Demo-6D28D9?style=for-the-badge&logo=vercel&logoColor=white" />
+</a>
+
+---
+
+## 🛠️ Tech Stack
+
+### 🎨 Frontend
+- React
+- Vite
+- Tailwind CSS
+
+### 📧 Contact Integration
+- EmailJS (Working Contact Form)
+
+### 🎭 UI Features
+- Dark / Light theme toggle  
+- Smooth scroll & animations  
+- Modern responsive layout  
+- Clean typography & section transitions  
+
+---
+
+## 📁 Project Structure
+
+```
+JaimilModi-Portfolio/
+│
+├── public/
+├── src/
+│
+├── .env
+├── index.html
+├── package.json
+├── vite.config.js
+└── eslint.config.js
+```
+
+---
+
+## 🌟 Key Sections
+
+- 🏠 Home  
+- 👨‍💻 About  
+- 🧠 Skills  
+- 🚀 Projects  
+- 📩 Contact (Fully working email system)  
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/JaimilModi/JaimilModi-Portfolio.git
+cd JaimilModi-Portfolio
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 👨‍💻 About Me
+
+I’m a creative and detail-driven developer who enjoys turning ideas into smooth, user-friendly digital experiences.  
+
+I focus on:
+- Clean design  
+- Efficient performance  
+- Modern web technologies  
+- Continuous learning & improvement  
+
+---
+
+## 📬 Contact
+
+📧 Email: jaimil2412@gmail.com  
+📍 Location: Gandhinagar, Gujarat, India  
+
+---
+
+⭐ Thank you for visiting my portfolio!
