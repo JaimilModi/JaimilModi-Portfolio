@@ -1,94 +1,133 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-const skills = [
-  { name: "C", level: 80, category: "languages" },
-  { name: "C++", level: 70, category: "languages" },
-  { name: "Python", level: 75, category: "languages" },
-  { name: "JavaScript", level: 70, category: "languages" },
-
-  { name: "HTML", level: 95, category: "frontend" },
-  { name: "CSS", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "Next.js", level: 60, category: "frontend" },
-  { name: "Tailwind CSS", level: 75, category: "frontend" },
-  { name: "Bootstrap", level: 70, category: "frontend" },
-  { name: "Daisy UI", level: 65, category: "frontend" },
-  { name: "React Router", level: 70, category: "frontend" },
-  { name: "React Markdown", level: 65, category: "frontend" },
-  { name: "React Hot Toast", level: 70, category: "frontend" },
-  { name: "Lucide React", level: 65, category: "frontend" },
-
-  { name: "Node.js", level: 50, category: "backend" },
-  { name: "Express", level: 70, category: "backend" },
-  { name: "Socket.io", level: 70, category: "backend" },
-  { name: "Clerk (Auth)", level: 65, category: "backend" },
-  { name: "CORS", level: 65, category: "backend" },
-  { name: "Dotenv", level: 70, category: "backend" },
-
-  { name: "MongoDB", level: 70, category: "database" },
-  { name: "SQL", level: 85, category: "database" },
-  { name: "Neon (Serverless Postgres)", level: 65, category: "database" },
-
-  { name: "Gemini API", level: 65, category: "api" },
-  { name: "Cloudinary", level: 70, category: "api" },
-
-  { name: "Bcrypt", level: 70, category: "security" },
-  { name: "Stripe", level: 65, category: "payments" },
-
-  { name: "DSA (C Implementation)", level: 65, category: "dsa" },
-
-  { name: "Arduino Uno", level: 85, category: "iot" },
-  { name: "Sensors", level: 85, category: "iot" },
-  { name: "Microcontrollers", level: 55, category: "iot" },
-
-  { name: "Android (C#)", level: 75, category: "mobile" },
-
-  { name: "Unity", level: 69, category: "game-dev" },
-
-  { name: "POSTMAN", level: 80, category: "tools" },
-  { name: "Thunder Client", level: 70, category: "tools" },
-  { name: "Multer", level: 65, category: "tools" },
-  { name: "PDF-Parse", level: 60, category: "tools" },
-  { name: "Git/GitHub", level: 75, category: "tools" },
-  { name: "VS Code", level: 85, category: "tools" },
-  { name: "Nodemon", level: 70, category: "tools" },
-  { name: "Axios", level: 75, category: "tools" },
+const coreStack = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "MongoDB",
+  "Tailwind CSS",
+  "Convex",
+  "Clerk",
 ];
+
+const skills = [
+  { name: "C", category: "languages" },
+  { name: "C++", category: "languages" },
+  { name: "Python", category: "languages" },
+  { name: "JavaScript", category: "languages" },
+  { name: "TypeScript", category: "languages" },
+  { name: "Java", category: "languages" },
+
+  { name: "HTML", category: "frontend" },
+  { name: "CSS", category: "frontend" },
+  { name: "React", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
+  { name: "Tailwind CSS", category: "frontend" },
+  { name: "Framer Motion", category: "frontend" },
+  { name: "Monaco Editor", category: "frontend" },
+  { name: "Zustand", category: "frontend" },
+
+  { name: "Node.js", category: "backend" },
+  { name: "Express.js", category: "backend" },
+  { name: "Convex", category: "backend" },
+  { name: "Socket.io", category: "backend" },
+  { name: "Clerk", category: "backend" },
+  { name: "JWT", category: "backend" },
+  { name: "REST APIs", category: "backend" },
+
+  { name: "MongoDB", category: "database" },
+  { name: "Mongoose", category: "database" },
+  { name: "SQL", category: "database" },
+  { name: "Neon PostgreSQL", category: "database" },
+
+  { name: "Stripe", category: "payments" },
+  { name: "LemonSqueezy", category: "payments" },
+
+  { name: "Data Structures", category: "dsa" },
+  { name: "Algorithms", category: "dsa" },
+
+  { name: "Arduino", category: "iot" },
+  { name: "Embedded C", category: "iot" },
+
+  { name: "Unity", category: "game-dev" },
+
+  { name: "Git", category: "tools" },
+  { name: "GitHub", category: "tools" },
+  { name: "VS Code", category: "tools" },
+  { name: "Postman", category: "tools" },
+  { name: "Axios", category: "tools" },
+  { name: "Vercel", category: "tools" },
+  { name: "Render", category: "tools" },
+];
+
 const categories = [
   "all",
   "frontend",
   "backend",
   "languages",
   "database",
+  "payments",
   "dsa",
   "iot",
-  "mobile",
+  "game-dev",
   "tools",
 ];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
-  return (
-    <section id="skill" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
+  const filteredSkills =
+    activeCategory === "all"
+      ? skills
+      : skills.filter((skill) => skill.category === activeCategory);
+
+  return (
+    <section id="skill" className="py-28 px-4 relative">
+      <div className="container mx-auto max-w-6xl">
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold tracking-tight">
+            My <span className="text-primary">Tech Arsenal</span>
+          </h2>
+          <p className="text-muted-foreground mt-4">
+            Technologies I use to build scalable, production-ready systems.
+          </p>
+        </div>
+
+        <div className="mb-20 text-center">
+          <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">
+            Core Stack
+          </h3>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {coreStack.map((tech, i) => (
+              <span
+                key={i}
+                className="px-6 py-2 rounded-full
+                           bg-white/5 backdrop-blur-md
+                           border border-white/10
+                           text-primary font-medium
+                           hover:bg-primary hover:text-primary-foreground
+                           transition-all duration-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {categories.map((category, i) => (
             <button
-              key={key}
+              key={i}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "px-5 py-2 text-sm rounded-full capitalize transition-all duration-300",
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10",
               )}
             >
               {category}
@@ -96,26 +135,28 @@ export const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredSkills.map((skill, i) => (
             <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              key={i}
+              className="
+                group relative
+                p-6 rounded-xl
+                bg-white/5 backdrop-blur-md
+                border border-white/10
+                hover:border-primary/40
+                hover:-translate-y-1
+                hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]
+                transition-all duration-300
+              "
             >
-              <div className="text-left mb-4">
-                <h3 classname="font-semibold text-lg">{skill.name}</h3>
-              </div>
-              <div classname="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              <h4 className="font-semibold text-lg">{skill.name}</h4>
+
+              <p className="text-sm text-muted-foreground capitalize mt-2">
+                {skill.category}
+              </p>
+
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
             </div>
           ))}
         </div>
